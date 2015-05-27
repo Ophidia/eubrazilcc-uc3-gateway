@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!--
+Eubrazil Scientific Gateway
+Copyright (C) 2015 CMCC
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see <http://www.gnu.org/licenses/>.
+-->
+
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+ 
+<struts>
+    <constant name="struts.enable.DynamicMethodInvocation"
+        value="false" />
+    <constant name="struts.devMode" value="false" />
+    <!-- <constant name="struts.custom.i18n.resources"
+        value="ApplicationResources" /> -->
+ 
+    <package name="default" extends="json-default" namespace="/actions">
+        
+        <action name="operationSubmit" class="it.cmcc.ophidiaweb.submit.SubmittingAction">
+        	<result name="success" type="json">
+        		<param name="root">result</param>
+        	</result>
+        </action>
+        
+        <action name="synchronousSubmit" class="it.cmcc.ophidiaweb.submit.SubmittingAction" method="synchexecute">
+        	<result name="success" type="json">
+        		<param name="root">jsonresult</param>
+        	</result>
+        </action>
+        
+        <!-- *** EuBrazil actions start *** -->
+        <action name="euSubmit" class="it.cmcc.eubrazil.submit.SubmitAction">
+        	<result name="success" type="json">
+        		<param name="root">jsonresult</param>
+        	</result>
+        </action>
+        
+        <action name="getJobs" class="it.cmcc.eubrazil.submit.GetJobsAction">
+        	<result name="success" type="json">
+        		<param name="root">jobs</param>
+        	</result>
+        </action>
+        
+        <action name="getExplorecubeResult" class="it.cmcc.eubrazil.submit.ExploreCubeAction">
+        	<result name="success" type="json">
+        		<param name="root">indicator</param>
+        	</result>
+        </action>
+        
+        <action name="getJsonResult" class="it.cmcc.eubrazil.submit.ExploreCubeAction" method="jsonexecute">
+        	<result name="success" type="json">
+        		<param name="root">indicator</param>
+        	</result>
+        </action>
+        
+        <action name="getXmlResult" class="it.cmcc.eubrazil.submit.ExploreCubeAction" method="xmlexecute">
+        	<result name="success" type="json">
+        		<param name="root">occurrence</param>
+        	</result>
+        </action>
+        
+        <action name="getExperimentsList" class="it.cmcc.eubrazil.submit.ExperimentsListAction">
+        	<result name="success" type="json">
+        		<param name="root">experiments</param>
+        	</result>
+        </action>
+        
+        <action name="getCHExperimentsList" class="it.cmcc.eubrazil.submit.CHExperimentsListAction">
+        	<result name="success" type="json">
+        		<param name="root">chexperiments</param>
+        	</result>
+        </action>
+        
+        <action name="storeinCH" class="it.cmcc.eubrazil.submit.StoreintheCHAction">
+        	<result name="success" type="json">
+        		<param name="root">chexperiment</param>
+        	</result>
+        </action>
+        
+        <action name="getCurrentstatus" class="it.cmcc.eubrazil.monitoring.CurrentStatusAction">
+        	<result name="success" type="json">
+        		<param name="root">currentstatus</param>
+        	</result>
+        </action>
+        
+        <action name="getHistory" class="it.cmcc.eubrazil.monitoring.HistoryAction">
+        	<result name="success" type="json">
+        		<param name="root">historylist</param>
+        	</result>
+        </action>
+        <!-- *** EuBrazil actions end *** -->
+    </package>
+    
+</struts>
