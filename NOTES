@@ -11,7 +11,7 @@ http://commons.apache.org
 Apache License, Version 2.0
 http://ezmorph.sourceforge.net/
 
-- Freemarker
+- FreeMarker
 LGPL License
 http://freemarker.org/
 
@@ -35,3 +35,30 @@ http://fasterxml.com
 Mozilla Public License Version 1.1, GNU Lesser General Public License Version 2.1, Apache License, Version 2.0
 http://jboss-javassist.github.io/javassist/
 
+- JSON lib
+Apache License, Version 2.0
+http://www.json.org/java/
+
+- JDBC Driver for MySQL
+GPL License
+http://dev.mysql.com/
+
+- Apache Commons OGNL - Object Graph Navigation Library
+Apache License, Version 2.0
+http://www.opensymphony.com/ognl/
+
+- Apache Struts
+Apache License, Version 2.0
+https://struts.apache.org/
+
+- XWork
+Apache License, Version 2.0
+http://www.opensymphony.com/xwork/
+
+- Struts 2 JSON Plugin
+Apache License, Version 2.0
+https://struts.apache.org/docs/json-plugin.html
+
+- Sencha ExtJS 4.2.1
+GPL v3 License
+http://www.sencha.com/products/extjs/
