@@ -7,6 +7,31 @@ The following libraries have been used:
 Apache License, Version 2.0
 http://commons.apache.org
 
+- EZMorph
+Apache License, Version 2.0
+http://ezmorph.sourceforge.net/
+
 - Freemarker
 LGPL License
 http://freemarker.org/
+
+- Apache HttpClient Cache
+Apache License, Version 2.0
+https://hc.apache.org/httpcomponents-client-ga/
+
+- Apache HttpClient Mime
+Apache License, Version 2.0
+https://hc.apache.org/httpcomponents-client-ga/
+
+- Jackson JSON processor
+Apache License, Version 2.0
+http://fasterxml.com
+
+- Data mapper for Jackson JSON processor
+Apache License, Version 2.0
+http://fasterxml.com
+
+- Javassist
+Mozilla Public License Version 1.1, GNU Lesser General Public License Version 2.1, Apache License, Version 2.0
+http://jboss-javassist.github.io/javassist/
+
