@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+EuBrazilCC UC3 Gateway
+Copyright 2014-2015 EUBrazilCC (EU‐Brazil Cloud Connect)
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributsed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see <http://www.gnu.org/licenses/>.
+-->
+
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+ 
+<struts>
+    <package name="chActions" extends="json-default" namespace="/clearinghouse">
+    	<interceptors>
+	        <interceptor name="LoginInterceptor" class="it.cmcc.sessionhandling.interceptors.LoginInterceptor">
+	        </interceptor>
+	        <interceptor-stack name="loginStack">
+	        	<interceptor-ref name="LoginInterceptor" />
+	            <interceptor-ref name="defaultStack" />
+	        </interceptor-stack>
+        </interceptors>
+        
+        <default-interceptor-ref name="loginStack"/>
+        
+		<action name="getCHExperiments" class="it.cmcc.eubrazil.clearinghouse.actions.ExperimentsListAction">
+        	<result name="success" type="json">
+        		<param name="root">experiments</param>
+        	</result>
+           	<result name="login" type="redirect">/Home.action</result>
+        </action>
+        
+        <action name="searchCH" class="it.cmcc.eubrazil.clearinghouse.actions.SearchCHAction">
+        	<result name="success" type="json">
+        		<param name="root">experiments</param>
+        	</result>
+           	<result name="login" type="redirect">/Home.action</result>
+        </action>
+        
+        <action name="deleteExperiment" class="it.cmcc.eubrazil.clearinghouse.actions.DeleteExperimentAction">
+            <result name="success" type="json"/>
+        </action>
+        
+    </package>
+</struts>

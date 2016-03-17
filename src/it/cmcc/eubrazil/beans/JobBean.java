@@ -1,6 +1,6 @@
 /**
-Eubrazil Scientific Gateway
-Copyright (C) 2015 CMCC
+EuBrazilCC UC3 Gateway
+Copyright 2014-2015 EUBrazilCC (EU‐Brazil Cloud Connect)
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -24,25 +24,20 @@ public class JobBean implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 	
-	private Integer id              = null;
-	private Integer idjob           = null;
-	private Integer idexperiment    = null;
-	private String model            = null;
-	private String mcodename        = null;
-	private String scenario         = null;
-	private String scodename        = null;
-	private String indicator        = null;
-	private String icodename        = null;
-	private String boundingbox      = null;
-	private String timerange        = null;
-	private String startdate        = null;
-	private String status           = null;
-	private String chstatus         = null;
-	private String datacubedoi      = null;
-	private String experimentstatus = null;
-	private String typeofsource     = null;
-	private String filename         = null;
-	private Integer available       = null;
+	private Integer id             = null;
+	private Integer idjob          = null;
+	private Integer idexperiment   = null;
+	private String  indicator      = null;
+	private String  source         = null;
+	private String  detail         = null;
+	private String  latrange       = null;
+	private String  lonrange       = null;
+	private String  timerange      = null;
+	private String  status         = null;
+	private String  resulttype     = null;
+	private String  resultname     = null;
+	private Integer stored         = null;
+	private String  submissiondate = null;
 	
 	public Integer getId() {
 		return id;
@@ -62,47 +57,35 @@ public class JobBean implements Serializable {
 	public void setIdexperiment(Integer idexperiment) {
 		this.idexperiment = idexperiment;
 	}
-	public String getModel() {
-		return model;
-	}
-	public void setModel(String model) {
-		this.model = model;
-	}
-	public String getMcodename() {
-		return mcodename;
-	}
-	public void setMcodename(String mcodename) {
-		this.mcodename = mcodename;
-	}
-	public String getScenario() {
-		return scenario;
-	}
-	public void setScenario(String scenario) {
-		this.scenario = scenario;
-	}
-	public String getScodename() {
-		return scodename;
-	}
-	public void setScodename(String scodename) {
-		this.scodename = scodename;
-	}
 	public String getIndicator() {
 		return indicator;
 	}
 	public void setIndicator(String indicator) {
 		this.indicator = indicator;
 	}
-	public String getIcodename() {
-		return icodename;
+	public String getSource() {
+		return source;
 	}
-	public void setIcodename(String icodename) {
-		this.icodename = icodename;
+	public void setSource(String source) {
+		this.source = source;
 	}
-	public String getBoundingbox() {
-		return boundingbox;
+	public String getDetail() {
+		return detail;
 	}
-	public void setBoundingbox(String boundingbox) {
-		this.boundingbox = boundingbox;
+	public void setDetail(String detail) {
+		this.detail = detail;
+	}
+	public String getLatrange() {
+		return latrange;
+	}
+	public void setLatrange(String latrange) {
+		this.latrange = latrange;
+	}
+	public String getLonrange() {
+		return lonrange;
+	}
+	public void setLonrange(String lonrange) {
+		this.lonrange = lonrange;
 	}
 	public String getTimerange() {
 		return timerange;
@@ -110,53 +93,34 @@ public class JobBean implements Serializable {
 	public void setTimerange(String timerange) {
 		this.timerange = timerange;
 	}
-	public String getStartdate() {
-		return startdate;
-	}
-	public void setStartdate(String startdate) {
-		this.startdate = startdate;
-	}
 	public String getStatus() {
 		return status;
 	}
 	public void setStatus(String status) {
 		this.status = status;
 	}
-	public String getChstatus() {
-		return chstatus;
+	public String getResulttype() {
+		return resulttype;
 	}
-	public void setChstatus(String chstatus) {
-		this.chstatus = chstatus;
+	public void setResulttype(String resulttype) {
+		this.resulttype = resulttype;
 	}
-	public String getDatacubedoi() {
-		return datacubedoi;
+	public String getResultname() {
+		return resultname;
 	}
-	public void setDatacubedoi(String datacubedoi) {
-		this.datacubedoi = datacubedoi;
+	public void setResultname(String resultname) {
+		this.resultname = resultname;
 	}
-	public String getExperimentstatus() {
-		return experimentstatus;
+	public Integer getStored() {
+		return stored;
 	}
-	public void setExperimentstatus(String experimentstatus) {
-		this.experimentstatus = experimentstatus;
+	public void setStored(Integer stored) {
+		this.stored = stored;
 	}
-	public String getTypeofsource() {
-		return typeofsource;
+	public String getSubmissiondate() {
+		return submissiondate;
 	}
-	public void setTypeofsource(String typeofsource) {
-		this.typeofsource = typeofsource;
+	public void setSubmissiondate(String submissiondate) {
+		this.submissiondate = submissiondate;
 	}
-	public String getFilename() {
-		return filename;
-	}
-	public void setFilename(String filename) {
-		this.filename = filename;
-	}
-	public Integer getAvailable() {
-		return available;
-	}
-	public void setAvailable(Integer available) {
-		this.available = available;
-	}
-	
 }

@@ -1,5 +1,5 @@
-Eubrazil Scientific Gateway
-Copyright (C) 2015 CMCC
+EuBrazilCC UC3 Gateway
+Copyright 2014-2015 EUBrazilCC (EU‐Brazil Cloud Connect)
 
 The following libraries have been used:
 
@@ -62,3 +62,8 @@ https://struts.apache.org/docs/json-plugin.html
 - Sencha ExtJS 4.2.1
 GPL v3 License
 http://www.sencha.com/products/extjs/
+
+Password Hashing With PBKDF2 Java Class (PasswordHash.java) 
+FreeBSD License 
+http://crackstation.net/hashing-security.htm
+

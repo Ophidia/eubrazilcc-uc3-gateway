@@ -1,6 +1,6 @@
 /**
-Eubrazil Scientific Gateway
-Copyright (C) 2015 CMCC
+EuBrazilCC UC3 Gateway
+Copyright 2014-2015 EUBrazilCC (EU‐Brazil Cloud Connect)
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -25,9 +25,9 @@ public class HistoryBean implements Serializable {
 	private static final long serialVersionUID = 1L;
 	
 	private String time    = null;
-	private Integer jobqueue1 = null;
-	private Integer jobqueue2 = null;
-	private Integer jobqueue3 = null;
+	private Integer expqueue1 = null;
+	private Integer expqueue2 = null;
+	private Integer expqueue3 = null;
 	
 	public String getTime() {
 		return time;
@@ -37,28 +37,27 @@ public class HistoryBean implements Serializable {
 		this.time = time;
 	}
 
-	public Integer getJobqueue1() {
-		return jobqueue1;
+	public Integer getExpqueue1() {
+		return expqueue1;
 	}
-	
-	public void setJobqueue1(Integer jobqueue1) {
-		this.jobqueue1 = jobqueue1;
+
+	public void setExpqueue1(Integer expqueue1) {
+		this.expqueue1 = expqueue1;
 	}
-	
-	public Integer getJobqueue2() {
-		return jobqueue2;
+
+	public Integer getExpqueue2() {
+		return expqueue2;
 	}
-	
-	public void setJobqueue2(Integer jobqueue2) {
-		this.jobqueue2 = jobqueue2;
+
+	public void setExpqueue2(Integer expqueue2) {
+		this.expqueue2 = expqueue2;
 	}
-	
-	public Integer getJobqueue3() {
-		return jobqueue3;
+
+	public Integer getExpqueue3() {
+		return expqueue3;
 	}
-	
-	public void setJobqueue3(Integer jobqueue3) {
-		this.jobqueue3 = jobqueue3;
-	}
-	
+
+	public void setExpqueue3(Integer expqueue3) {
+		this.expqueue3 = expqueue3;
+	}	
 }

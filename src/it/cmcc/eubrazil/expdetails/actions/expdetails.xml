@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+EuBrazilCC UC3 Gateway
+Copyright 2014-2015 EUBrazilCC (EU‐Brazil Cloud Connect)
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see <http://www.gnu.org/licenses/>.
+-->
+
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+ 
+<struts>
+    <package name="expdetailsActions" extends="json-default,struts-default" namespace="/expdetails">
+    	<interceptors>
+	        <interceptor name="LoginInterceptor" class="it.cmcc.sessionhandling.interceptors.LoginInterceptor">
+	        </interceptor>
+	        <interceptor-stack name="loginStack">
+	        	<interceptor-ref name="LoginInterceptor" />
+	            <interceptor-ref name="defaultStack" />
+	        </interceptor-stack>
+        </interceptors>
+        
+        <default-interceptor-ref name="loginStack"/>
+        
+        <action name="getClimateSebalResults" class="it.cmcc.eubrazil.expdetails.actions.GetClimateSebalResultsAction">
+            <result name="success" type="json">
+            	<param name="root">jsonresult</param>
+            </result>
+        </action>
+        
+        <action name="getClimateSebalSummary" class="it.cmcc.eubrazil.expdetails.actions.GetClimateSebalSummaryAction">
+            <result name="success" type="json">
+            	<param name="root">summary</param>
+            </result>
+        </action>
+        
+        <action name="getSebalInterannualResults" class="it.cmcc.eubrazil.expdetails.actions.SebalInterannualResultsAction">
+            <result name="success" type="json">
+            	<param name="root">jsonresult</param>
+            </result>
+        </action>
+        
+        <action name="getSebalInterannualSummary" class="it.cmcc.eubrazil.expdetails.actions.GetSebalInterannualSummaryAction">
+            <result name="success" type="json">
+            	<param name="root">summaryArray</param>
+            </result>
+        </action>
+        
+        <action name="getRelativeHeightResults" class="it.cmcc.eubrazil.expdetails.actions.GetRelativeHeightResultsAction">
+            <result name="success" type="json">
+            	<param name="root">jsonresult</param>
+            </result>
+        </action>
+        
+         <action name="getRelativeHeightSummary" class="it.cmcc.eubrazil.expdetails.actions.GetRelativeHeightSummaryAction">
+            <result name="success" type="json">
+            	<param name="root">summaryArray</param>
+            </result>
+        </action> 
+        
+        <action name="getLidarIntercomparisonResults" class="it.cmcc.eubrazil.expdetails.actions.GetLidarIntercomparisonResultsAction">
+            <result name="success" type="json">
+            	<param name="root">jsonresult</param>
+            </result>
+        </action>
+        
+        <action name="getLidarIntercomparisonSummary" class="it.cmcc.eubrazil.expdetails.actions.GetLidarIntercomparisonSummaryAction">
+            <result name="success" type="json">
+            	<param name="root">summaryArray</param>
+            </result>
+        </action> 
+        
+        <action name="getModelIntercomparisonResults" class="it.cmcc.eubrazil.expdetails.actions.GetModelIntercomparisonResultsAction">
+            <result name="success" type="json">
+            	<param name="root">jsonresult</param>
+            </result>
+        </action>
+        
+        <action name="getModelIntercomparisonSummary" class="it.cmcc.eubrazil.expdetails.actions.GetModelIntercomparisonSummaryAction">
+            <result name="success" type="json">
+            	<param name="root">summaryArray</param>
+            </result>
+        </action> 
+        
+        <action name="storeintheCH" class="it.cmcc.eubrazil.expdetails.actions.StoreintheCHAction">
+            <result name="success" type="json"/>
+        </action>
+        
+        <action name="getFileCSV" class="it.cmcc.eubrazil.expdetails.actions.GetFileCSVAction">
+            <result name="success" type="stream">
+                <param name="contentType">text/csv</param>
+                <param name="inputName">inputStream</param>
+                <param name="contentDisposition">filename="${customname}"</param>
+                <param name="bufferSize">4096</param>
+            </result>
+        </action>
+        
+        <action name="getFileTIF" class="it.cmcc.eubrazil.expdetails.actions.GetFileTIFAction">
+            <result name="success" type="stream">
+                <param name="contentType">text/tif</param>
+                <param name="inputName">inputStream</param>
+                <param name="contentDisposition">filename="${customname}"</param>
+                <param name="bufferSize">4096</param>
+            </result>
+        </action>
+        
+        <action name="getFileIMG" class="it.cmcc.eubrazil.expdetails.actions.GetFileIMGAction">
+            <result name="success" type="stream">
+                <param name="contentType">text/img</param>
+                <param name="inputName">inputStream</param>
+                <param name="contentDisposition">filename="${customname}"</param>
+                <param name="bufferSize">4096</param>
+            </result>
+        </action>
+        
+        <action name="getFilePNG" class="it.cmcc.eubrazil.expdetails.actions.GetFilePNGAction">
+            <result name="success" type="stream">
+                <param name="contentType">text/img</param>
+                <param name="inputName">inputStream</param>
+                <param name="contentDisposition">filename="${customname}"</param>
+                <param name="bufferSize">4096</param>
+            </result>
+        </action>
+        
+        <action name="getENMResults" class="it.cmcc.eubrazil.expdetails.actions.GetENMResultsAction">
+            <result name="success" type="json">
+            	<param name="root">jsonresult</param>
+            </result>
+        </action>
+        
+        <action name="getENMSummary" class="it.cmcc.eubrazil.expdetails.actions.GetENMSummaryAction">
+            <result name="success" type="json">
+            	<param name="root">summaryArray</param>
+            </result>
+        </action> 
+        
+        <action name="getDataPoints" class="it.cmcc.eubrazil.expdetails.actions.GetDataPointsAction">
+        	<result name="success" type="json">
+        		<param name="root">dataPointsList</param>
+        	</result>
+        	<result name="login" type="redirect">/Home.action</result>
+        </action>        
+    </package>
+</struts>

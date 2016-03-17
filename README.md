@@ -1,6 +1,6 @@
 <h3>DESCRIPTION</h3>
 
-Eubrazil Scientific Gateway integrates tools to understand how biodiversity (and its ecosystems) is buffering climate change and may reduce negative effects of climate change.
+EuBrazilCC UC3 Gateway integrates tools to understand how biodiversity (and its ecosystems) is buffering climate change and may reduce negative effects of climate change.
 
 This package contains the Gateway web application, which can be used to submit and visualize the output of workflows combining the analysis of data acquired with different technologies with meteorological and biodiversity data to study the impact of climate change in regions with high interest for biodiversity conservation.
 

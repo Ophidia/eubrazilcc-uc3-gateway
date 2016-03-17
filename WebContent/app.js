@@ -1,6 +1,6 @@
 /**
-Eubrazil Scientific Gateway
-Copyright (C) 2015 CMCC
+EuBrazilCC UC3 Gateway
+Copyright 2014-2015 EUBrazilCC (EU‐Brazil Cloud Connect)
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -19,38 +19,68 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 Ext.application({
     
 	name: 'OphWebAnalytics',
-    
+	
 	appFolder: 'ophwebanalytics/framework',
     
 	paths: {
-		'Eubrazil' : 'ophwebanalytics/eubrazil',
-		'Libraries': 'ophwebanalytics/libraries',
-		'Ext.ux'   : 'extjs/examples/ux'
+		'Home'         : 'ophwebanalytics/home',
+		'Interactive'  : 'ophwebanalytics/interactive',
+		'Compute'      : 'ophwebanalytics/compute',
+		'ClearingHouse': 'ophwebanalytics/clearinghouse',
+		'ExpDetails'   : 'ophwebanalytics/expdetails',
+		'Admin'        : 'ophwebanalytics/admin',
+		
+		'Libraries'    : 'ophwebanalytics/libraries',
+		'Ext.ux'       : 'extjs/examples/ux/form',
+		'Ext.app'      : 'extjs/examples/portal/classes'
 	},
     
 	controllers: ['FrameworkController'],
-    
-    launch: function() {
+	
+	autoCreateViewport: false,
+	
+	launch: function () {
         Ext.create('Ext.container.Viewport', {
-        	layout: 'border',
+            layout: 'fit',
             items: [{
-            	xtype : 'box',
-            	region: 'north',
-            	height: 32,
-            	autoEl: {
-            		tag : 'div',
-                    html:'<p align="center"><b>SCIENTIFIC GATEWAY FOR DATA ANALYSIS</b></p>'
-            	}
-            },{
-            	xtype : 'panel',
-            	region: 'center',
-            	layout: 'border',
-            	items : [{
-            		xtype: 'centerpanel'
-            	},{
-            		xtype: 'westpanel'
-            	}]
+                xtype: 'panel',
+                border: false,
+                layout: 'border',
+                items: [{
+                	layout: {
+                		align: 'stretch',
+                		type : 'hbox'
+                	},
+                	border: false,
+                	region: 'north',
+                	cls   : 'header-background',
+                	height: 75,
+                	items : [{
+                		xtype : 'box',
+                		flex  : 10,
+                		border: false,
+                    	autoEl: {
+                    		tag : 'div',
+                    		html:'<img src="images/logo2.png" width="850px"/>'
+                    	}
+                	},{
+                		xtype: 'panel',
+                		width : 80,
+                		border: false,
+                		bodyPadding: '25 10 0 0',
+                		items : [{
+                			xtype : 'button',
+                			text  : 'Sign out',
+                			id    : 'logout'
+                		}]
+                	}]
+                },{
+                	xtype : 'tabpanel',
+                	region: 'center',
+                	layout: 'fit',
+                	id    : 'viewportcenterafterlogin'
+                }]
             }]
         });
-    }
+    } 
 });

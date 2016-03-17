@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+EuBrazilCC UC3 Gateway
+Copyright 2014-2015 EUBrazilCC (EU‐Brazil Cloud Connect)
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see <http://www.gnu.org/licenses/>.
+-->
+
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+ 
+<struts>
+    <package name="computeActions" extends="json-default" namespace="/compute">
+    	<interceptors>
+	        <interceptor name="LoginInterceptor" class="it.cmcc.sessionhandling.interceptors.LoginInterceptor">
+	        </interceptor>
+	        <interceptor-stack name="loginStack">
+	        	<interceptor-ref name="LoginInterceptor" />
+	            <interceptor-ref name="defaultStack" />
+	        </interceptor-stack>
+        </interceptors>
+        
+        <default-interceptor-ref name="loginStack"/>
+        
+        <action name="submitClimateSebalExperiment" class="it.cmcc.eubrazil.compute.actions.ClimateSebalExperimentAction">
+        	<result name="success" type="json">
+        		<param name="root">jsonresult</param>
+        	</result>
+        	<result name="login" type="redirect">/Home.action</result>
+        </action>
+        
+        <action name="submitClimateAnalysisExperiment" class="it.cmcc.eubrazil.compute.actions.ClimateAnalysisExperimentAction">
+        	<result name="success" type="json">
+        		<param name="root">jsonresult</param>
+        	</result>
+        	<result name="login" type="redirect">/Home.action</result>
+        </action>
+        
+        <action name="submitInterannualExperiment" class="it.cmcc.eubrazil.compute.actions.InterannualExperimentAction">
+        	<result name="success" type="json">
+        		<param name="root">jsonresult</param>
+        	</result>
+        	<result name="login" type="redirect">/Home.action</result>
+        </action>
+                
+        <action name="submitRelativeHeightExperiment" class="it.cmcc.eubrazil.compute.actions.RelativeHeightExperimentAction">
+        	<result name="success" type="json">
+        		<param name="root">jsonresult</param>
+        	</result>
+        	<result name="login" type="redirect">/Home.action</result>
+        </action>
+        
+        <action name="submitLidarIntercomparisonExperiment" class="it.cmcc.eubrazil.compute.actions.LidarIntercomparisonExperimentAction">
+        	<result name="success" type="json">
+        		<param name="root">jsonresult</param>
+        	</result>
+        	<result name="login" type="redirect">/Home.action</result>
+        </action>
+        
+        <action name="getLidarTilesBBox" class="it.cmcc.eubrazil.compute.actions.GetLidarTilesBBoxAction">
+        	<result name="success" type="json">
+        		<param name="root">lidarbbox</param>
+        	</result>
+        	<result name="login" type="redirect">/Home.action</result>
+        </action>
+        
+		<action name="getExperiments" class="it.cmcc.eubrazil.compute.actions.ExperimentsListAction">
+        	<result name="success" type="json">
+        		<param name="root">experiments</param>
+        	</result>
+        	<result name="login" type="redirect">/Home.action</result>
+        </action>
+        
+        <action name="getExperimentFromId" class="it.cmcc.eubrazil.compute.actions.GetExperimentAction">
+        	<result name="success" type="json">
+        		<param name="root">experiment</param>
+        	</result>
+        	<result name="login" type="redirect">/Home.action</result>
+        </action>
+        
+        <action name="getBBox" class="it.cmcc.eubrazil.compute.actions.GetBBoxAction">
+        	<result name="success" type="json">
+        		<param name="root">datasets</param>
+        	</result>
+        	<result name="login" type="redirect">/Home.action</result>
+        </action>
+        
+        <action name="deleteExperiment" class="it.cmcc.eubrazil.compute.actions.DeleteExperimentAction">
+            <result name="success" type="json"/>
+        </action>
+        
+        <action name="getSpecies" class="it.cmcc.eubrazil.compute.actions.SpeciesListAction">
+        	<result name="success" type="json">
+        		<param name="root">speciesList</param>
+        	</result>
+        	<result name="login" type="redirect">/Home.action</result>
+        </action>
+        
+        <action name="getSpeciesDataPoints" class="it.cmcc.eubrazil.compute.actions.SpeciesDataPointsListAction">
+        	<result name="success" type="json">
+        		<param name="root">dataPointsList</param>
+        	</result>
+        	<result name="login" type="redirect">/Home.action</result>
+        </action>
+        
+        <action name="submitENMExperiment" class="it.cmcc.eubrazil.compute.actions.ENMExperimentAction">
+        	<result name="success" type="json">
+        		<param name="root">jsonresult</param>
+        	</result>
+        	<result name="login" type="redirect">/Home.action</result>
+        </action>
+        
+        <action name="GetUserType" class="it.cmcc.eubrazil.compute.actions.GetUserType">
+        	<result name="success" type="json">
+        		<param name="root">useroutput</param>
+        	</result>
+        	<result name="login" type="redirect">/Home.action</result>
+		</action>		
+		
+    </package>
+</struts>

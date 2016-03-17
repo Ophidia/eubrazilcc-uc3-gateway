@@ -1,0 +1,82 @@
+/**
+EuBrazilCC UC3 Gateway
+Copyright 2014-2015 EUBrazilCC (EU‐Brazil Cloud Connect)
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see <http://www.gnu.org/licenses/>.
+**/
+
+.x-progress-bar-default {
+    background-color: #b0e0e6 !important;
+    margin: 1px;
+}
+
+.home-text-bold {
+	text-align: center;
+	text-rendering: optimizelegibility;
+	letter-spacing: 0.1px;
+	font-family: "Roboto","Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-size: 19.5px;
+	font-weight: bold;
+    line-height: 1.4;
+    margin-bottom: 23px;
+    color: #666666;
+}
+.home-text {
+	text-align: center;
+	text-rendering: optimizelegibility;
+	letter-spacing: 0.1px;
+	font-family: "Roboto","Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-size: 19.5px;
+	font-weight: 300;
+    line-height: 1.4;
+    margin-bottom: 23px;
+    color: #666666;
+}
+.home-text-doc {
+	text-rendering: optimizelegibility;
+	letter-spacing: 0.1px;
+	font-family: "Roboto","Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-size: 19.5px;
+	font-weight: 300;
+    line-height: 1.4;
+    margin-bottom: 23px;
+    color: #666666;
+}
+.home-text-doc-bold {
+	text-rendering: optimizelegibility;
+	letter-spacing: 0.1px;
+	font-family: "Roboto","Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-size: 19.5px;
+	font-weight: bold;
+    line-height: 1.4;
+    margin-bottom: 23px;
+    color: #666666;
+}
+.home-box {
+	background-color: #ffffff;
+    border: 1px solid #dddddd;
+    border-radius: 3px;
+    display: block;
+    line-height: 1.846;
+    margin-bottom: 23px;
+    padding: 4px;
+    transition: border 0.2s ease-in-out 0s;
+}
+
+.x-mask-msg-text {
+    background-image: none;
+    background-position: center 0;
+    background-repeat: no-repeat;
+    padding: 0 0 0;
+}

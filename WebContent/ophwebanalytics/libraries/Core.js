@@ -1,6 +1,6 @@
 /**
-Eubrazil Scientific Gateway
-Copyright (C) 2015 CMCC
+EuBrazilCC UC3 Gateway
+Copyright 2014-2015 EUBrazilCC (EU‐Brazil Cloud Connect)
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -32,6 +32,7 @@ Ext.define('Libraries.Core', {
     	actionInvocation:function(configs){
     		Ext.Ajax.request({
         	    url: configs.actionurl,
+        	    method: 'post',
         	    params: configs.actionparams,
         	    success: configs.resultsuccessHandler
         	});
@@ -41,24 +42,14 @@ Ext.define('Libraries.Core', {
 			return this.getController(controllerPath);
     	},
     	
-    	addViewToViewport: function(view, position, index) {
-    		var targetpanel = this.getViewportPanel(position);
-    		if (targetpanel) {
-    			if (index != null) {
-    				targetpanel.add(index, view);
-    			}
-    			else targetpanel.add(view);
-    		}
-    	},
-    	
     	getViewportPanel:function(position){
-    		var fc=this.getController('FrameworkController');
+    		var fc = this.getController('FrameworkController');
     		var targetpanel = null;
     		
-    		if(position=='center') targetpanel=fc.getCenter();
-    		else if(position=='east') targetpanel=fc.getEast();
-    		else if(position=='south') targetpanel=fc.getSouth();
-    		else if(position=='west') targetpanel=fc.getWest();
+    		if (position == 'center') targetpanel = fc.getCenter();
+    		else if (position == 'east') targetpanel = fc.getEast();
+    		else if (position == 'south') targetpanel = fc.getSouth();
+    		else if (position == 'west') targetpanel = fc.getWest();
     		return targetpanel;
     	},
     	registerOnWSController:function(controllerid,messagetypes){
@@ -68,13 +59,6 @@ Ext.define('Libraries.Core', {
     		gadgetMsgtypes.messagetypes=messagetypes;
     		wsc.register(gadgetMsgtypes);
     	
-    	},
-    	controlEvent:function(controller,viewId,eventMng){
-    		controller.control(
-    			'#'+viewId,
-    			eventMng
-        	);
     	}
-    	
     }
 });
